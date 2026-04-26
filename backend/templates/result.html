@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background:#0f172a;
+    color:white;
+    font-family:'Segoe UI';
+    text-align:center;
+    padding-top:100px;
+}
+.card {
+    background:#1e293b;
+    padding:30px;
+    border-radius:12px;
+    display:inline-block;
+}
+.valid { color:#22c55e; }
+.fake { color:#ef4444; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2 class="{{ 'valid' if result=='VALID' else 'fake' }}">
+    {{ result }}
+</h2>
+
+<p><b>Owner:</b> {{ owner }}</p>
+<p><b>Timestamp:</b> {{ timestamp }}</p>
+
+<br>
+<a href="/" style="color:#60a5fa;">← Back</a>
+</div>
+
+</body>
+</html>

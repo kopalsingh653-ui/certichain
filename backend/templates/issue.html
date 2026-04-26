@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background:#0f172a; color:white; font-family:'Segoe UI'; }
+.card {
+    width:350px;
+    margin:60px auto;
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+}
+input, button {
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border-radius:6px;
+    border:none;
+}
+button {
+    background:#6366f1;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Issue Certificate</h2>
+
+<form method="POST">
+    <input name="cert_id" placeholder="Certificate ID" required>
+    <input name="name" placeholder="Student Name" required>
+    <input name="course" placeholder="Course" required>
+    <input name="issuer" placeholder="Issuer" required>
+
+    <input type="hidden" name="wallet" id="wallet">
+
+    <button type="submit">Issue Certificate</button>
+</form>
+</div>
+
+<script>
+document.getElementById("wallet").value =
+    localStorage.getItem("wallet");
+</script>
+
+</body>
+</html>
