@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-body {
-    background:#0f172a;
-    color:white;
-    font-family:'Segoe UI';
-    text-align:center;
-    padding-top:100px;
-}
-.card {
-    background:#1e293b;
-    padding:30px;
-    border-radius:12px;
-    display:inline-block;
-}
-.valid { color:#22c55e; }
-.fake { color:#ef4444; }
-</style>
-</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<body>
+<div class="container">
 
 <div class="card">
-<h2 class="{{ 'valid' if result=='VALID' else 'fake' }}">
-    {{ result }}
-</h2>
 
-<p><b>Owner:</b> {{ owner }}</p>
-<p><b>Timestamp:</b> {{ timestamp }}</p>
+{% if hash %}
+<h2>✅ Certificate Issued</h2>
+<p><b>Hash:</b> {{hash}}</p>
+<p><b>Transaction:</b> {{tx}}</p>
 
-<br>
-<a href="/" style="color:#60a5fa;">← Back</a>
+<img src="/{{qr}}" width="200">
+
+<br><br>
+<a href="/dashboard"><button>Go Back</button></a>
+{% endif %}
+
+{% if data %}
+<h2>🔍 Verification Result</h2>
+<p>Name: {{data[0]}}</p>
+<p>Course: {{data[1]}}</p>
+<p>Status: {{data[4]}}</p>
+{% endif %}
+
 </div>
 
-</body>
-</html>
+</div>

@@ -1,51 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-body { background:#0f172a; color:white; font-family:'Segoe UI'; }
-.card {
-    width:350px;
-    margin:60px auto;
-    background:#1e293b;
-    padding:25px;
-    border-radius:10px;
-}
-input, button {
-    width:100%;
-    margin-top:10px;
-    padding:10px;
-    border-radius:6px;
-    border:none;
-}
-button {
-    background:#6366f1;
-    color:white;
-    cursor:pointer;
-}
-</style>
-</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<body>
-
-<div class="card">
-<h2>Issue Certificate</h2>
-
-<form method="POST">
-    <input name="cert_id" placeholder="Certificate ID" required>
-    <input name="name" placeholder="Student Name" required>
-    <input name="course" placeholder="Course" required>
-    <input name="issuer" placeholder="Issuer" required>
-
-    <input type="hidden" name="wallet" id="wallet">
-
-    <button type="submit">Issue Certificate</button>
-</form>
+<div class="navbar">
+  <h2>Issue Certificate</h2>
 </div>
 
-<script>
-document.getElementById("wallet").value =
-    localStorage.getItem("wallet");
-</script>
+<div class="container">
 
-</body>
-</html>
+<div class="card">
+  <h3>Enter Certificate Details</h3>
+
+  <form method="POST">
+    <input name="name" placeholder="Student Name" required>
+    <input name="course" placeholder="Course Name" required>
+
+    <button type="submit">🚀 Issue Certificate</button>
+  </form>
+
+  <br>
+  <a href="/dashboard"><button>⬅ Back</button></a>
+</div>
+
+</div>

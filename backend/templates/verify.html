@@ -1,42 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-body { background:#0f172a; color:white; font-family:'Segoe UI'; }
-.card {
-    width:350px;
-    margin:60px auto;
-    background:#1e293b;
-    padding:25px;
-    border-radius:10px;
-}
-input, button {
-    width:100%;
-    margin-top:10px;
-    padding:10px;
-    border-radius:6px;
-    border:none;
-}
-button {
-    background:#6366f1;
-    color:white;
-}
-</style>
-</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<body>
+<div class="container">
 
 <div class="card">
 <h2>Verify Certificate</h2>
 
 <form method="POST">
-    <input name="cert_id" placeholder="Certificate ID" required>
-    <input name="name" placeholder="Student Name" required>
-    <input name="course" placeholder="Course" required>
-
-    <button type="submit">Verify</button>
+  <input name="hash" placeholder="Enter Certificate Hash">
+  <button>Verify</button>
 </form>
+
 </div>
 
-</body>
-</html>
+</div>
